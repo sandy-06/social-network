@@ -6,7 +6,7 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
-            value: trimmed
+            trim: true,
         },
         
             email: {
@@ -41,5 +41,5 @@ userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
   });
 
-const User = model('User', userSchema);
+const User = model('User',  userSchema);
   module.exports =User;
